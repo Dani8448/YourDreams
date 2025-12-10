@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dreams</title>
+    
+    <style>
+        body {
+            background: 
+                url('nubesmoradas.png') no-repeat center bottom fixed,
+                linear-gradient(to bottom, #0A192F, #172A46);
+            background-size: 100% auto, cover; 
+            min-height: 100vh; 
+            margin: 0; 
+            color: white; 
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-shadow: 1px 1px 3px black; 
+        }
+
+        /* Contenedor principal que usa Flexbox para organizar las columnas */
+        .main-container {
+            display: flex; /* Activa Flexbox */
+            gap: 40px; /* Espacio entre las dos columnas (formulario y marcador) */
+            flex-wrap: wrap; /* Permite que las columnas se apilen en móviles si es necesario */
+        }
+
+        /* Estilo para la sección del formulario */
+        .form-section {
+            flex: 2; /* Ocupa 2 partes del espacio disponible (más ancho) */
+            min-width: 300px; /* Ancho mínimo para que no se vea mal en pantallas pequeñas */
+        }
+
+        /* Estilo para el marcador de sueños populares (la barra lateral) */
+        .popular-dreams-section {
+            flex: 1; /* Ocupa 1 parte del espacio disponible (más estrecho) */
+            background-color: rgba(255, 255, 255, 0.05); /* Fondo semitransparente oscuro */
+            padding: 20px;
+            border-radius: 8px;
+            min-width: 200px; /* Ancho mínimo */
+            height: fit-content; /* Ajusta la altura al contenido de la lista */
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            margin-top: 15px;
+            box-sizing: border-box;
+            border: 1px solid #172A46; 
+            border-radius: 5px;
+            background-color: #0A192F;
+            color: white;
+            resize: vertical;
+        }
+        
+        button {
+            background-color: #334466;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #4A608A;
+        }
+        
+        /* Estilo para los elementos de la lista */
+        .popular-dreams-list {
+            list-style-type: none; /* Elimina las viñetas por defecto */
+            padding: 0;
+        }
+
+        .popular-dreams-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .popular-dreams-list li:hover {
+            color: #6699FF; /* Color diferente al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a Your Dreams</h1>
+    
+    <!-- Contenedor principal de layout Flexbox -->
+    <div class="main-container">
+        
+        <!-- Columna del Formulario -->
+        <div class="form-section">
+            <p>¿Qué has soñado hoy?</p>
+            <form action="#" method="POST">
+                <textarea name="sueno" id="sueno" rows="5" placeholder="Escribe aquí tu sueño..."></textarea>
+                <button type="submit">Enviar Sueño</button>
+            </form>
+        </div>
+
+        <!-- Columna del Marcador de Sueños Populares -->
+        <div class="popular-dreams-section">
+            <h2>Sueños Populares</h2>
+            <ul class="popular-dreams-list">
+                <li>Volar libremente</li>
+                <li>Caer al vacío</li>
+                <li>Dientes que se caen</li>
+                <li>Ser perseguido</li>
+                <li>Hablar con animales</li>
+            </ul>
+        </div>
+
+    </div> <!-- Fin del main-container -->
+
+</body>
+</html>
